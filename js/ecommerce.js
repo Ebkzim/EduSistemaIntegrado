@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
           
           const pixCode = generateRandomPixCode();
-          document.getElementById('pix-code').textContent = pixCode;
+          document.getElementById('pix-code').textContent = 'a67ca1ec-2d9b-46b2-baec-0de13c6c2813';
           
           
           const pixQrcode = document.getElementById('pix-qrcode');
