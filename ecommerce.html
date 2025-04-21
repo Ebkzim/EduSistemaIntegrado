@@ -2,21 +2,22 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="icon.png" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>E-commerce - Sistema Integrado Edu</title>
-  <link rel="icon" href="icon.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/ecommerce.css">
 </head>
 <body>
+  
   <header>
     <div class="container">
       <nav class="navbar">
         <a href="index.html" class="navbar-brand">Sistema <span>Edu</span></a>
         <ul class="nav-menu">
-          <li class="nav-item none"><a href="index.html" class="nav-link">Início</a></li>
-         
+          <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+          
         </ul>
         <div class="nav-cart">
           <div class="cart-button" id="cart-button">
@@ -28,17 +29,18 @@
     </div>
   </header>
 
+  
   <main>
     <div class="container">
+      
       <div class="main-banner">
         <div class="banner-content">
           <h1>Peças de Computador de Alta Qualidade</h1>
           <p>Monte seu PC ideal com os melhores componentes do mercado</p>
-          <div class="banner-buttons">
-            
-          </div>
+          
         </div>
       </div>
+      
       
       <div class="search-container">
         <div class="search-box">
@@ -83,6 +85,7 @@
         </div>
       </div>
       
+      
       <div class="featured-categories">
         <h2 class="section-title">Categorias</h2>
         <div class="categories-grid">
@@ -113,7 +116,7 @@
         </div>
       </div>
       
-    
+      
       <div class="products-section">
         <h2 class="section-title">Produtos em Destaque</h2>
         <div id="products-container" class="products-grid">
@@ -123,6 +126,7 @@
     </div>
   </main>
 
+  
   <div id="product-modal" class="modal">
     <div class="modal-content product-modal-content">
       <span class="close-button">&times;</span>
@@ -176,6 +180,7 @@
     </div>
   </div>
 
+  
   <div id="cart-sidebar" class="cart-sidebar">
     <div class="cart-header">
       <h2>Seu Carrinho</h2>
@@ -183,7 +188,7 @@
     </div>
     
     <div id="cart-items" class="cart-items">
-     
+      
       <div class="empty-cart-message">Seu carrinho está vazio.</div>
     </div>
     
@@ -203,178 +208,273 @@
     </div>
   </div>
 
+  
   <div id="checkout-modal" class="modal">
     <div class="modal-content checkout-modal-content">
-      <span class="close-checkout-button">&times;</span>
+      <span class="close-button">&times;</span>
       <h2>Finalizar Compra</h2>
       
-      <div class="checkout-sections">
-        <div class="checkout-form">
-          <div class="checkout-section">
-            <h3>Dados Pessoais</h3>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Nome Completo</label>
-                <input type="text" id="name" placeholder="Digite seu nome completo">
+      <div id="checkout-sections" class="checkout-sections">
+        
+        <div id="checkout-step-1" class="checkout-step active">
+          <div class="checkout-form">
+            <div class="checkout-section">
+              <h3>Dados Pessoais</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Nome Completo</label>
+                  <input type="text" id="name" placeholder="Digite seu nome completo">
+                </div>
+                <div class="form-group">
+                  <label for="email">E-mail</label>
+                  <input type="email" id="email" placeholder="Digite seu e-mail">
+                </div>
               </div>
-              <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="Digite seu e-mail">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="cpf">CPF</label>
-                <input type="text" id="cpf" placeholder="Digite seu CPF">
-              </div>
-              <div class="form-group">
-                <label for="phone">Telefone</label>
-                <input type="text" id="phone" placeholder="Digite seu telefone">
-              </div>
-            </div>
-          </div>
-          
-          <div class="checkout-section">
-            <h3>Endereço de Entrega</h3>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="cep">CEP</label>
-                <input type="text" id="cep" placeholder="Digite seu CEP">
-              </div>
-              <div class="form-group">
-                <label for="street">Rua</label>
-                <input type="text" id="street" placeholder="Digite sua rua">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="number">Número</label>
-                <input type="text" id="number" placeholder="Número">
-              </div>
-              <div class="form-group">
-                <label for="complement">Complemento</label>
-                <input type="text" id="complement" placeholder="Complemento (opcional)">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="city">Cidade</label>
-                <input type="text" id="city" placeholder="Cidade">
-              </div>
-              <div class="form-group">
-                <label for="state">Estado</label>
-                <select id="state">
-                  <option value="">Selecione</option>
-                  <option value="AC">Acre</option>
-                  <option value="AL">Alagoas</option>
-                  <option value="AP">Amapá</option>
-                  <option value="AM">Amazonas</option>
-                  <option value="BA">Bahia</option>
-                  <option value="CE">Ceará</option>
-                  <option value="DF">Distrito Federal</option>
-                  <option value="ES">Espírito Santo</option>
-                  <option value="GO">Goiás</option>
-                  <option value="MA">Maranhão</option>
-                  <option value="MT">Mato Grosso</option>
-                  <option value="MS">Mato Grosso do Sul</option>
-                  <option value="MG">Minas Gerais</option>
-                  <option value="PA">Pará</option>
-                  <option value="PB">Paraíba</option>
-                  <option value="PR">Paraná</option>
-                  <option value="PE">Pernambuco</option>
-                  <option value="PI">Piauí</option>
-                  <option value="RJ">Rio de Janeiro</option>
-                  <option value="RN">Rio Grande do Norte</option>
-                  <option value="RS">Rio Grande do Sul</option>
-                  <option value="RO">Rondônia</option>
-                  <option value="RR">Roraima</option>
-                  <option value="SC">Santa Catarina</option>
-                  <option value="SP">São Paulo</option>
-                  <option value="SE">Sergipe</option>
-                  <option value="TO">Tocantins</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          
-          <div class="checkout-section">
-            <h3>Pagamento</h3>
-            <div class="payment-methods">
-              <div class="payment-method">
-                <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
-                <label for="credit-card">Cartão de Crédito</label>
-              </div>
-              <div class="payment-method">
-                <input type="radio" id="boleto" name="payment-method" value="boleto">
-                <label for="boleto">Boleto Bancário</label>
-              </div>
-              <div class="payment-method">
-                <input type="radio" id="pix" name="payment-method" value="pix">
-                <label for="pix">PIX</label>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cpf">CPF</label>
+                  <input type="text" id="cpf" placeholder="Digite seu CPF">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Telefone</label>
+                  <input type="text" id="phone" placeholder="Digite seu telefone">
+                </div>
               </div>
             </div>
             
-            <div id="credit-card-fields" class="payment-details">
+            <div class="checkout-section">
+              <h3>Endereço de Entrega</h3>
               <div class="form-row">
                 <div class="form-group">
-                  <label for="card-number">Número do Cartão</label>
-                  <input type="text" id="card-number" placeholder="0000 0000 0000 0000">
+                  <label for="cep">CEP</label>
+                  <input type="text" id="cep" placeholder="Digite seu CEP">
                 </div>
                 <div class="form-group">
-                  <label for="card-name">Nome no Cartão</label>
-                  <input type="text" id="card-name" placeholder="Nome impresso no cartão">
+                  <label for="street">Rua</label>
+                  <input type="text" id="street" placeholder="Digite sua rua">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group">
-                  <label for="card-expiry">Validade</label>
-                  <input type="text" id="card-expiry" placeholder="MM/AA">
+                  <label for="number">Número</label>
+                  <input type="text" id="number" placeholder="Número">
                 </div>
                 <div class="form-group">
-                  <label for="card-cvv">CVV</label>
-                  <input type="text" id="card-cvv" placeholder="123">
+                  <label for="complement">Complemento</label>
+                  <input type="text" id="complement" placeholder="Complemento (opcional)">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="city">Cidade</label>
+                  <input type="text" id="city" placeholder="Cidade">
+                </div>
+                <div class="form-group">
+                  <label for="state">Estado</label>
+                  <select id="state">
+                    <option value="">Selecione</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                  </select>
                 </div>
               </div>
             </div>
+            
+            <div class="checkout-actions">
+              <button id="continue-to-payment" class="btn btn-primary continue-btn">
+                Continuar para Pagamento
+              </button>
+            </div>
           </div>
           
-          <div class="form-group">
-            <div class="coupon-code">
-              <label for="coupon">Cupom de Desconto</label>
-              <div class="coupon-input">
-                <input type="text" id="coupon" placeholder="Digite seu cupom">
-                <button id="apply-coupon" class="btn btn-secondary">Aplicar</button>
+          <div class="order-summary">
+            <h3>Resumo do Pedido</h3>
+            <div id="checkout-items" class="checkout-items">
+              
+            </div>
+            <div class="checkout-totals">
+              <div class="subtotal">
+                <span>Subtotal:</span>
+                <span id="checkout-subtotal">R$ 0,00</span>
+              </div>
+              <div class="shipping">
+                <span>Frete:</span>
+                <span id="checkout-shipping">R$ 0,00</span>
+              </div>
+              <div class="discount" id="discount-row" style="display: none;">
+                <span>Desconto:</span>
+                <span id="checkout-discount">-R$ 0,00</span>
+              </div>
+              <div class="total">
+                <span>Total:</span>
+                <span id="checkout-total">R$ 0,00</span>
+              </div>
+            </div>
+            
+            <div class="form-group coupon-container">
+              <div class="coupon-code">
+                <label for="coupon">Cupom de Desconto</label>
+                <div class="coupon-input">
+                  <input type="text" id="coupon" placeholder="Digite seu cupom">
+                  <button id="apply-coupon" class="btn btn-secondary">Aplicar</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
         
-        <div class="order-summary">
-          <h3>Resumo do Pedido</h3>
-          <div id="checkout-items" class="checkout-items">
+        
+        <div id="checkout-step-2" class="checkout-step">
+          <div class="checkout-form">
+            <div class="checkout-section">
+              <div class="checkout-nav">
+                <button id="back-to-address" class="btn-text">
+                  <i class="fas fa-arrow-left"></i> Voltar para Endereço
+                </button>
+              </div>
+              
+              <h3>Pagamento</h3>
+              <div class="payment-methods">
+                <div class="payment-method">
+                  <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                  <label for="credit-card">Cartão de Crédito</label>
+                </div>
+                <div class="payment-method">
+                  <input type="radio" id="boleto" name="payment-method" value="boleto">
+                  <label for="boleto">Boleto Bancário</label>
+                </div>
+                <div class="payment-method">
+                  <input type="radio" id="pix" name="payment-method" value="pix">
+                  <label for="pix">PIX</label>
+                </div>
+              </div>
+              
+              <div id="credit-card-fields" class="payment-details">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="card-number">Número do Cartão</label>
+                    <input type="text" id="card-number" placeholder="0000 0000 0000 0000">
+                  </div>
+                  <div class="form-group">
+                    <label for="card-name">Nome no Cartão</label>
+                    <input type="text" id="card-name" placeholder="Nome impresso no cartão">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="card-expiry">Validade</label>
+                    <input type="text" id="card-expiry" placeholder="MM/AA">
+                  </div>
+                  <div class="form-group">
+                    <label for="card-cvv">CVV</label>
+                    <input type="text" id="card-cvv" placeholder="123">
+                  </div>
+                </div>
+              </div>
+              
+              
+              <div id="boleto-fields" class="payment-details" style="display: none;">
+                <div class="boleto-info">
+                  <p>O boleto será gerado após a finalização do pedido e enviado para o seu e-mail.</p>
+                  <p>O prazo de validade do boleto é de 3 dias úteis.</p>
+                  <div class="boleto-warning">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Seu pedido será confirmado somente após a compensação do pagamento.</span>
+                  </div>
+                </div>
+              </div>
+              
+              
+              <div id="pix-fields" class="payment-details" style="display: none;">
+                <div class="pix-container">
+                  <div class="pix-qrcode-container">
+                    <img id="pix-qrcode" src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="QR Code PIX" class="pix-qrcode">
+                  </div>
+                  <div class="pix-info">
+                    <h4>Código PIX</h4>
+                    <div class="pix-code-container">
+                      <code id="pix-code">XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX</code>
+                      <button class="copy-button" title="Copiar código PIX">
+                        <i class="fas fa-copy"></i>
+                      </button>
+                    </div>
+                    <p>Escaneie o QR code ou copie o código acima para pagar.</p>
+                    <div class="pix-expiry">
+                      <i class="fas fa-clock"></i>
+                      <span>Válido por 30 minutos</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             
-          </div>
-          <div class="checkout-totals">
-            <div class="subtotal">
-              <span>Subtotal:</span>
-              <span id="checkout-subtotal">R$ 0,00</span>
-            </div>
-            <div class="shipping">
-              <span>Frete:</span>
-              <span id="checkout-shipping">R$ 0,00</span>
-            </div>
-            <div class="discount" id="discount-row" style="display: none;">
-              <span>Desconto:</span>
-              <span id="checkout-discount">-R$ 0,00</span>
-            </div>
-            <div class="total">
-              <span>Total:</span>
-              <span id="checkout-total">R$ 0,00</span>
+            <div class="checkout-actions">
+              <button id="place-order-button" class="btn btn-primary place-order-btn">
+                Finalizar Pedido
+              </button>
             </div>
           </div>
-          <button id="place-order-button" class="btn btn-primary place-order-btn">
-            Finalizar Pedido
-          </button>
+          
+          <div class="order-summary">
+            <h3>Resumo do Pedido</h3>
+            <div id="checkout-items-2" class="checkout-items">
+              
+            </div>
+            <div class="checkout-totals">
+              <div class="subtotal">
+                <span>Subtotal:</span>
+                <span id="checkout-subtotal-2">R$ 0,00</span>
+              </div>
+              <div class="shipping">
+                <span>Frete:</span>
+                <span id="checkout-shipping-2">R$ 0,00</span>
+              </div>
+              <div class="discount" id="discount-row-2" style="display: none;">
+                <span>Desconto:</span>
+                <span id="checkout-discount-2">-R$ 0,00</span>
+              </div>
+              <div class="total">
+                <span>Total:</span>
+                <span id="checkout-total-2">R$ 0,00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div id="checkout-processing" class="checkout-processing" style="display: none;">
+        <h3>Processando seu pedido</h3>
+        <div class="processing-animation">
+          <div class="progress-container">
+            <div id="payment-progress-bar" class="progress-bar"></div>
+          </div>
+          <p id="payment-progress-message" class="progress-message">Iniciando processamento...</p>
         </div>
       </div>
     </div>
@@ -383,17 +483,17 @@
   
   <div id="message-modal" class="modal">
     <div class="modal-content message-modal-content">
-      <span class="close-message-button">&times;</span>
+      <span class="close-button">&times;</span>
       <h2 id="message-title">Título da Mensagem</h2>
       <p id="message-text">Texto da mensagem aqui.</p>
       <button id="message-button" class="btn btn-primary">OK</button>
     </div>
   </div>
 
- 
+  
   <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
- 
+  
   <footer>
     <div class="container">
       <div class="footer-content">
@@ -404,6 +504,7 @@
       </div>
     </div>
   </footer>
+
   <script src="js/ecommerce.js"></script>
 </body>
 </html>

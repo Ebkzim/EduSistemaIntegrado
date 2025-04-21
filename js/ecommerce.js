@@ -19,170 +19,170 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const products = [
     {
-      id: 1,
-      name: 'Processador AMD Ryzen 7 5800X',
-      category: 'processor',
-      price: 1999.90,
-      salePrice: 1799.90,
-      rating: 4.8,
-      reviews: 356,
-      image: 'https://m.media-amazon.com/images/I/61DYLoyNRWL._AC_SX679_.jpg',
-      description: 'Processador AMD Ryzen 7 5800X, 8 núcleos, 16 threads, 3.8GHz (4.7GHz Max Boost), Cache 36MB, AM4, Sem Vídeo.'
-    },
-    {
-      id: 2,
-      name: 'Placa de Vídeo NVIDIA RTX 3070',
-      category: 'gpu',
-      price: 3999.90,
-      salePrice: 3699.90,
-      rating: 4.9,
-      reviews: 289,
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxH7QjlyWrp5qGOJDcDWGYBvzcWSwP4-CelA&s',
-      description: 'Placa de Vídeo NVIDIA GeForce RTX 3070, 8GB GDDR6, DLSS, Ray Tracing, design térmico avançado.'
-    },
-    {
-      id: 3,
-      name: 'Placa-Mãe ASUS ROG Strix B550-F',
-      category: 'motherboard',
-      price: 1499.90,
-      salePrice: null,
-      rating: 4.7,
-      reviews: 124,
-      image: 'https://m.media-amazon.com/images/I/81x069mwcbL._AC_SX679_.jpg',
-      description: 'Placa-Mãe ASUS ROG Strix B550-F Gaming WiFi 6, AMD AM4, ATX, PCIe 4.0, Intel 2.5Gb Ethernet, SATA 6Gbps, USB 3.2 Gen 2.'
-    },
-    {
-      id: 4,
-      name: 'Memória RAM Corsair Vengeance RGB Pro 16GB',
-      category: 'memory',
-      price: 599.90,
-      salePrice: 549.90,
-      rating: 4.8,
-      reviews: 216,
-      image: 'https://images.kabum.com.br/produtos/fotos/108450/memoria-corsair-vengeance-rgb-pro-16gb-2x8gb-3600mhz-ddr4-cl18-cmw16gx4m2z3600c18_1575379797_g.jpg',
-      description: 'Memória RAM Corsair Vengeance RGB Pro 16GB (2x8GB) DDR4 3200MHz, iluminação RGB dinâmica, PCB personalizado.'
-    },
-    {
-      id: 5,
-      name: 'SSD Samsung 970 EVO Plus 1TB',
-      category: 'storage',
-      price: 999.90,
-      salePrice: 899.90,
-      rating: 4.9,
-      reviews: 342,
-      image: 'https://m.media-amazon.com/images/I/81zE8qvJbdL._AC_UF894,1000_QL80_.jpg',
-      description: 'SSD Samsung 970 EVO Plus, 1TB, M.2, NVMe, Leitura 3500MB/s, Gravação 3300MB/s, tecnologia V-NAND.'
-    },
-    {
-      id: 6,
-      name: 'Gabinete Corsair 4000D Airflow',
-      category: 'case',
-      price: 799.90,
-      salePrice: null,
-      rating: 4.7,
-      reviews: 178,
-      image: 'https://images.kabum.com.br/produtos/fotos/115451/gabinete-gamer-corsair-4000d-airflow-mid-tower-atx-lateral-em-vidro-temperado-com-2x-fan-preto-cc-9011200-ww_1728041901_gg.jpg',
-      description: 'Gabinete Corsair 4000D Airflow Mid-Tower, fluxo de ar otimizado, gerenciamento de cabos, painel lateral em vidro temperado.'
-    },
-    {
-      id: 7,
-      name: 'Fonte de Alimentação EVGA 750W 80 Plus Gold',
-      category: 'power',
-      price: 899.90,
-      salePrice: 849.90,
-      rating: 4.8,
-      reviews: 205,
-      image: 'https://images.kabum.com.br/produtos/fotos/60443/60443_index_g.jpg',
-      description: 'Fonte de Alimentação EVGA SuperNOVA 750 G5, 750W, 80 Plus Gold, totalmente modular, Eco Mode, garantia de 10 anos.'
-    },
-    {
-      id: 8,
-      name: 'Monitor Gamer LG UltraGear 27"',
-      category: 'peripheral',
-      price: 2499.90,
-      salePrice: 2299.90,
-      rating: 4.8,
-      reviews: 267,
-      image: 'https://images.kabum.com.br/produtos/fotos/620992/monitor-gamer-lg-ultragear-27-ips-full-hd-180hz-1ms-displayport-e-hdmi-g-sync-freesync-hdr10-srgb-99-preto-27gs60f-b_1725043961_gg.jpg',
-      description: 'Monitor Gamer LG UltraGear 27", 144Hz, 1ms, IPS, QHD (2560x1440), HDR 10, sRGB 99%, NVIDIA G-SYNC e AMD FreeSync.'
-    },
-    {
-      id: 9,
-      name: 'Teclado Mecânico Logitech G Pro X',
-      category: 'peripheral',
-      price: 799.90,
-      salePrice: 749.90,
-      rating: 4.6,
-      reviews: 198,
-      image: 'https://images.kabum.com.br/produtos/fotos/495547/teclado-gamer-sem-fio-logitech-g-pro-x-com-design-tkl-layout-us-rgb-lightsync-e-switch-exclusivo-gx-brown-tactile-preto-920-012127_1696620456_gg.jpg',
-      description: 'Teclado Mecânico Gamer Logitech G Pro X, RGB LIGHTSYNC, switches GX Blue clicky, design compacto tenkeyless (TKL).'
-    },
-    {
-      id: 10,
-      name: 'Mouse Gamer Razer DeathAdder V2',
-      category: 'peripheral',
-      price: 399.90,
-      salePrice: 349.90,
-      rating: 4.8,
-      reviews: 321,
-      image: 'https://m.media-amazon.com/images/I/61doJ9AKCPL._AC_SX679_.jpg',
-      description: 'Mouse Gamer Razer DeathAdder V2, sensor óptico 20.000 DPI, 8 botões programáveis, switches ópticos, cabo Speedflex.'
-    },
-    {
-      id: 11,
-      name: 'Headset Gamer HyperX Cloud II',
-      category: 'peripheral',
-      price: 699.90,
-      salePrice: 599.90,
-      rating: 4.7,
-      reviews: 287,
-      image: 'https://row.hyperx.com/cdn/shop/files/hyperx_cloud_ii_red_1_main.jpg?v=1737720332',
-      description: 'Headset Gamer HyperX Cloud II, som surround 7.1, espuma memory foam, estrutura de alumínio durável, certificado pelo TeamSpeak.'
-    },
-    {
-      id: 12,
-      name: 'Processador Intel Core i7-11700K',
-      category: 'processor',
-      price: 2399.90,
-      salePrice: 2199.90,
-      rating: 4.7,
-      reviews: 243,
-      image: 'https://images.kabum.com.br/produtos/fotos/148902/processador-intel-core-i7-11700k-11-geracao-cache-16mb-3-6-ghz-4-9ghz-turbo-lga1200-bx8070811700k_1615491329_gg.jpg',
-      description: 'Processador Intel Core i7-11700K, 8 núcleos, 16 threads, 3.6GHz (5.0GHz Max Turbo), Cache 16MB, LGA1200, Vídeo Integrado.'
-    },
-    {
-      id: 13,
-      name: 'Water Cooler Corsair H100i RGB Pro XT',
-      category: 'cooling',
-      price: 899.90,
-      salePrice: 849.90,
-      rating: 4.6,
-      reviews: 165,
-      image: 'https://images.kabum.com.br/produtos/fotos/108804/water-cooler-corsair-icue-h100i-pro-xt-hydro-series-120mm-rgb-cw-9060043-ww_1577201550_original.jpg',
-      description: 'Water Cooler Corsair H100i RGB Pro XT, Radiador de 240mm, RGB dinâmico, software iCUE, controle de velocidade PWM.'
-    },
-    {
-      id: 14,
-      name: 'Placa de Vídeo AMD Radeon RX 6800 XT',
-      category: 'gpu',
-      price: 4499.90,
-      salePrice: 4299.90,
-      rating: 4.8,
-      reviews: 198,
-      image: 'https://m.media-amazon.com/images/I/81ReRd8MrSL.jpg',
-      description: 'Placa de Vídeo AMD Radeon RX 6800 XT, 16GB GDDR6, Ray Tracing, AMD Infinity Cache, tecnologia AMD RDNA 2.'
-    },
-    {
-      id: 15,
-      name: 'SSD Kingston A2000 1TB',
-      category: 'storage',
-      price: 799.90,
-      salePrice: 699.90,
-      rating: 4.6,
-      reviews: 182,
-      image: 'https://images.kabum.com.br/produtos/fotos/103381/ssd-kingston-a2000-1tb-m-2-nvme-leitura-2200mb-s-gravacao-2000mb-s-sa2000m8-1000g-_1566243598_original.jpg',
-      description: 'SSD Kingston A2000, 1TB, M.2 2280 NVMe, Leitura 2200MB/s, Gravação 2000MB/s, PCIe Gen 3.0 x4, ideal para notebooks e sistemas compactos.'
-    }
+        id: 1,
+        name: 'Processador AMD Ryzen 7 5800X',
+        category: 'processor',
+        price: 1999.90,
+        salePrice: 1799.90,
+        rating: 4.8,
+        reviews: 356,
+        image: 'https://m.media-amazon.com/images/I/61DYLoyNRWL._AC_SX679_.jpg',
+        description: 'Processador AMD Ryzen 7 5800X, 8 núcleos, 16 threads, 3.8GHz (4.7GHz Max Boost), Cache 36MB, AM4, Sem Vídeo.'
+      },
+      {
+        id: 2,
+        name: 'Placa de Vídeo NVIDIA RTX 3070',
+        category: 'gpu',
+        price: 3999.90,
+        salePrice: 3699.90,
+        rating: 4.9,
+        reviews: 289,
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxH7QjlyWrp5qGOJDcDWGYBvzcWSwP4-CelA&s',
+        description: 'Placa de Vídeo NVIDIA GeForce RTX 3070, 8GB GDDR6, DLSS, Ray Tracing, design térmico avançado.'
+      },
+      {
+        id: 3,
+        name: 'Placa-Mãe ASUS ROG Strix B550-F',
+        category: 'motherboard',
+        price: 1499.90,
+        salePrice: null,
+        rating: 4.7,
+        reviews: 124,
+        image: 'https://m.media-amazon.com/images/I/81x069mwcbL._AC_SX679_.jpg',
+        description: 'Placa-Mãe ASUS ROG Strix B550-F Gaming WiFi 6, AMD AM4, ATX, PCIe 4.0, Intel 2.5Gb Ethernet, SATA 6Gbps, USB 3.2 Gen 2.'
+      },
+      {
+        id: 4,
+        name: 'Memória RAM Corsair Vengeance RGB Pro 16GB',
+        category: 'memory',
+        price: 599.90,
+        salePrice: 549.90,
+        rating: 4.8,
+        reviews: 216,
+        image: 'https://images.kabum.com.br/produtos/fotos/108450/memoria-corsair-vengeance-rgb-pro-16gb-2x8gb-3600mhz-ddr4-cl18-cmw16gx4m2z3600c18_1575379797_g.jpg',
+        description: 'Memória RAM Corsair Vengeance RGB Pro 16GB (2x8GB) DDR4 3200MHz, iluminação RGB dinâmica, PCB personalizado.'
+      },
+      {
+        id: 5,
+        name: 'SSD Samsung 970 EVO Plus 1TB',
+        category: 'storage',
+        price: 999.90,
+        salePrice: 899.90,
+        rating: 4.9,
+        reviews: 342,
+        image: 'https://m.media-amazon.com/images/I/81zE8qvJbdL._AC_UF894,1000_QL80_.jpg',
+        description: 'SSD Samsung 970 EVO Plus, 1TB, M.2, NVMe, Leitura 3500MB/s, Gravação 3300MB/s, tecnologia V-NAND.'
+      },
+      {
+        id: 6,
+        name: 'Gabinete Corsair 4000D Airflow',
+        category: 'case',
+        price: 799.90,
+        salePrice: null,
+        rating: 4.7,
+        reviews: 178,
+        image: 'https://images.kabum.com.br/produtos/fotos/115451/gabinete-gamer-corsair-4000d-airflow-mid-tower-atx-lateral-em-vidro-temperado-com-2x-fan-preto-cc-9011200-ww_1728041901_gg.jpg',
+        description: 'Gabinete Corsair 4000D Airflow Mid-Tower, fluxo de ar otimizado, gerenciamento de cabos, painel lateral em vidro temperado.'
+      },
+      {
+        id: 7,
+        name: 'Fonte de Alimentação EVGA 750W 80 Plus Gold',
+        category: 'power',
+        price: 899.90,
+        salePrice: 849.90,
+        rating: 4.8,
+        reviews: 205,
+        image: 'https://images.kabum.com.br/produtos/fotos/60443/60443_index_g.jpg',
+        description: 'Fonte de Alimentação EVGA SuperNOVA 750 G5, 750W, 80 Plus Gold, totalmente modular, Eco Mode, garantia de 10 anos.'
+      },
+      {
+        id: 8,
+        name: 'Monitor Gamer LG UltraGear 27"',
+        category: 'peripheral',
+        price: 2499.90,
+        salePrice: 2299.90,
+        rating: 4.8,
+        reviews: 267,
+        image: 'https://images.kabum.com.br/produtos/fotos/620992/monitor-gamer-lg-ultragear-27-ips-full-hd-180hz-1ms-displayport-e-hdmi-g-sync-freesync-hdr10-srgb-99-preto-27gs60f-b_1725043961_gg.jpg',
+        description: 'Monitor Gamer LG UltraGear 27", 144Hz, 1ms, IPS, QHD (2560x1440), HDR 10, sRGB 99%, NVIDIA G-SYNC e AMD FreeSync.'
+      },
+      {
+        id: 9,
+        name: 'Teclado Mecânico Logitech G Pro X',
+        category: 'peripheral',
+        price: 799.90,
+        salePrice: 749.90,
+        rating: 4.6,
+        reviews: 198,
+        image: 'https://images.kabum.com.br/produtos/fotos/495547/teclado-gamer-sem-fio-logitech-g-pro-x-com-design-tkl-layout-us-rgb-lightsync-e-switch-exclusivo-gx-brown-tactile-preto-920-012127_1696620456_gg.jpg',
+        description: 'Teclado Mecânico Gamer Logitech G Pro X, RGB LIGHTSYNC, switches GX Blue clicky, design compacto tenkeyless (TKL).'
+      },
+      {
+        id: 10,
+        name: 'Mouse Gamer Razer DeathAdder V2',
+        category: 'peripheral',
+        price: 399.90,
+        salePrice: 349.90,
+        rating: 4.8,
+        reviews: 321,
+        image: 'https://m.media-amazon.com/images/I/61doJ9AKCPL._AC_SX679_.jpg',
+        description: 'Mouse Gamer Razer DeathAdder V2, sensor óptico 20.000 DPI, 8 botões programáveis, switches ópticos, cabo Speedflex.'
+      },
+      {
+        id: 11,
+        name: 'Headset Gamer HyperX Cloud II',
+        category: 'peripheral',
+        price: 699.90,
+        salePrice: 599.90,
+        rating: 4.7,
+        reviews: 287,
+        image: 'https://row.hyperx.com/cdn/shop/files/hyperx_cloud_ii_red_1_main.jpg?v=1737720332',
+        description: 'Headset Gamer HyperX Cloud II, som surround 7.1, espuma memory foam, estrutura de alumínio durável, certificado pelo TeamSpeak.'
+      },
+      {
+        id: 12,
+        name: 'Processador Intel Core i7-11700K',
+        category: 'processor',
+        price: 2399.90,
+        salePrice: 2199.90,
+        rating: 4.7,
+        reviews: 243,
+        image: 'https://images.kabum.com.br/produtos/fotos/148902/processador-intel-core-i7-11700k-11-geracao-cache-16mb-3-6-ghz-4-9ghz-turbo-lga1200-bx8070811700k_1615491329_gg.jpg',
+        description: 'Processador Intel Core i7-11700K, 8 núcleos, 16 threads, 3.6GHz (5.0GHz Max Turbo), Cache 16MB, LGA1200, Vídeo Integrado.'
+      },
+      {
+        id: 13,
+        name: 'Water Cooler Corsair H100i RGB Pro XT',
+        category: 'cooling',
+        price: 899.90,
+        salePrice: 849.90,
+        rating: 4.6,
+        reviews: 165,
+        image: 'https://images.kabum.com.br/produtos/fotos/108804/water-cooler-corsair-icue-h100i-pro-xt-hydro-series-120mm-rgb-cw-9060043-ww_1577201550_original.jpg',
+        description: 'Water Cooler Corsair H100i RGB Pro XT, Radiador de 240mm, RGB dinâmico, software iCUE, controle de velocidade PWM.'
+      },
+      {
+        id: 14,
+        name: 'Placa de Vídeo AMD Radeon RX 6800 XT',
+        category: 'gpu',
+        price: 4499.90,
+        salePrice: 4299.90,
+        rating: 4.8,
+        reviews: 198,
+        image: 'https://m.media-amazon.com/images/I/81ReRd8MrSL.jpg',
+        description: 'Placa de Vídeo AMD Radeon RX 6800 XT, 16GB GDDR6, Ray Tracing, AMD Infinity Cache, tecnologia AMD RDNA 2.'
+      },
+      {
+        id: 15,
+        name: 'SSD Kingston A2000 1TB',
+        category: 'storage',
+        price: 799.90,
+        salePrice: 699.90,
+        rating: 4.6,
+        reviews: 182,
+        image: 'https://images.kabum.com.br/produtos/fotos/103381/ssd-kingston-a2000-1tb-m-2-nvme-leitura-2200mb-s-gravacao-2000mb-s-sa2000m8-1000g-_1566243598_original.jpg',
+        description: 'SSD Kingston A2000, 1TB, M.2 2280 NVMe, Leitura 2200MB/s, Gravação 2000MB/s, PCIe Gen 3.0 x4, ideal para notebooks e sistemas compactos.'
+      }
   ];
   
   
@@ -245,28 +245,77 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('buy-now-button').addEventListener('click', buyNow);
     
     
-    setupModalClose('checkout-modal', 'close-checkout-button');
+    setupModalClose('checkout-modal', 'close-button');
     document.getElementById('apply-coupon').addEventListener('click', applyCoupon);
     document.getElementById('place-order-button').addEventListener('click', placeOrder);
+    
+    
+    document.getElementById('continue-to-payment').addEventListener('click', continueToPayment);
+    document.getElementById('back-to-address').addEventListener('click', backToAddress);
     
     
     const paymentMethods = document.querySelectorAll('input[name="payment-method"]');
     paymentMethods.forEach(method => {
       method.addEventListener('change', function() {
-        const creditCardFields = document.getElementById('credit-card-fields');
+        
+        document.getElementById('credit-card-fields').style.display = 'none';
+        document.getElementById('boleto-fields').style.display = 'none';
+        document.getElementById('pix-fields').style.display = 'none';
+        
+        
         if (this.value === 'credit-card') {
-          creditCardFields.style.display = 'block';
-        } else {
-          creditCardFields.style.display = 'none';
+          document.getElementById('credit-card-fields').style.display = 'block';
+        } else if (this.value === 'boleto') {
+          document.getElementById('boleto-fields').style.display = 'block';
+        } else if (this.value === 'pix') {
+          document.getElementById('pix-fields').style.display = 'block';
+          
+          
+          const pixCode = generateRandomPixCode();
+          document.getElementById('pix-code').textContent = pixCode;
+          
+          
+          const pixQrcode = document.getElementById('pix-qrcode');
+          pixQrcode.style.opacity = '0.3';
+          setTimeout(() => {
+            pixQrcode.style.opacity = '1';
+          }, 500);
         }
       });
     });
     
     
-    setupModalClose('message-modal', 'close-message-button');
+    setupModalClose('message-modal', 'close-button');
     document.getElementById('message-button').addEventListener('click', function() {
       document.getElementById('message-modal').style.display = 'none';
     });
+    
+    
+    const copyButton = document.querySelector('.copy-button');
+    if (copyButton) {
+      copyButton.addEventListener('click', function() {
+        const pixCode = document.getElementById('pix-code').textContent;
+        navigator.clipboard.writeText(pixCode).then(
+          function() {
+            
+            copyButton.innerHTML = '<i class="fas fa-check"></i>';
+            copyButton.style.backgroundColor = '#d1fae5';
+            copyButton.style.color = '#10b981';
+            
+            
+            setTimeout(() => {
+              copyButton.innerHTML = '<i class="fas fa-copy"></i>';
+              copyButton.style.backgroundColor = '';
+              copyButton.style.color = '';
+            }, 2000);
+          },
+          function() {
+            
+            alert('Erro ao copiar o código. Por favor, copie manualmente.');
+          }
+        );
+      });
+    }
   }
   
   
@@ -332,9 +381,49 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <span class="product-category">${getCategoryName(product.category)}</span>
       </div>
+      <div class="product-card-actions">
+        <button class="product-action-btn add-to-cart-btn" data-id="${product.id}">
+          <i class="fas fa-cart-plus"></i> Adicionar
+        </button>
+        <button class="product-action-btn buy-now-btn" data-id="${product.id}">
+          <i class="fas fa-bolt"></i> Comprar
+        </button>
+      </div>
     `;
     
-    productElement.addEventListener('click', () => showProductDetails(product));
+    
+    const imageWrapper = productElement.querySelector('.product-image-wrapper');
+    const productName = productElement.querySelector('.product-name');
+    
+    imageWrapper.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showProductDetails(product);
+    });
+    
+    productName.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showProductDetails(product);
+    });
+    
+    
+    const addToCartBtn = productElement.querySelector('.add-to-cart-btn');
+    const buyNowBtn = productElement.querySelector('.buy-now-btn');
+    
+    addToCartBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      addToCart(product.id, 1);
+      showMessage('Produto Adicionado', 'O produto foi adicionado ao seu carrinho com sucesso!');
+    });
+    
+    buyNowBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      
+      cartItems.length = 0;
+      addToCart(product.id, 1);
+      
+      
+      showCheckoutModal();
+    });
     
     return productElement;
   }
@@ -562,6 +651,14 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('sidebar-overlay').classList.remove('open');
     
     
+    document.getElementById('checkout-step-1').classList.add('active');
+    document.getElementById('checkout-step-2').classList.remove('active');
+    
+    
+    document.getElementById('checkout-processing').style.display = 'none';
+    document.getElementById('checkout-sections').style.display = 'block';
+    
+    
     updateCheckoutItems();
     
     
@@ -572,6 +669,48 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     document.getElementById('checkout-modal').style.display = 'flex';
+  }
+  
+  
+  function continueToPayment() {
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const cep = document.getElementById('cep').value;
+    const street = document.getElementById('street').value;
+    
+    if (!name || !email || !cep || !street) {
+      showMessage('Dados Incompletos', 'Por favor, preencha os campos obrigatórios para continuar.');
+      return;
+    }
+    
+    
+    document.getElementById('checkout-step-1').classList.remove('active');
+    document.getElementById('checkout-step-2').classList.add('active');
+    
+    
+    document.getElementById('checkout-items-2').innerHTML = document.getElementById('checkout-items').innerHTML;
+    document.getElementById('checkout-subtotal-2').textContent = document.getElementById('checkout-subtotal').textContent;
+    document.getElementById('checkout-shipping-2').textContent = document.getElementById('checkout-shipping').textContent;
+    
+    
+    const discountRow = document.getElementById('discount-row');
+    const discountRow2 = document.getElementById('discount-row-2');
+    
+    if (discountRow.style.display === 'flex') {
+      discountRow2.style.display = 'flex';
+      document.getElementById('checkout-discount-2').textContent = document.getElementById('checkout-discount').textContent;
+    } else {
+      discountRow2.style.display = 'none';
+    }
+    
+    document.getElementById('checkout-total-2').textContent = document.getElementById('checkout-total').textContent;
+  }
+  
+  
+  function backToAddress() {
+    document.getElementById('checkout-step-2').classList.remove('active');
+    document.getElementById('checkout-step-1').classList.add('active');
   }
   
   
@@ -649,6 +788,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (discountCoupons[coupon]) {
       appliedCoupon = coupon;
       updateCheckoutTotals();
+      
+      
+      if (document.getElementById('checkout-step-2').classList.contains('active')) {
+        const discountValue = document.getElementById('checkout-discount').textContent;
+        document.getElementById('checkout-discount-2').textContent = discountValue;
+        document.getElementById('discount-row-2').style.display = 'flex';
+        document.getElementById('checkout-total-2').textContent = document.getElementById('checkout-total').textContent;
+      }
+      
       showMessage('Cupom Aplicado', `Cupom ${coupon} aplicado com sucesso! Desconto de ${discountCoupons[coupon]}% aplicado.`);
     } else {
       showMessage('Cupom Inválido', `O cupom ${coupon} não é válido ou expirou.`);
@@ -656,25 +804,82 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   
-  function placeOrder() {
+  async function placeOrder() {
     
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    
-    if (!name || !email) {
-      showMessage('Dados Incompletos', 'Por favor, preencha seus dados pessoais para continuar.');
+    if (!document.getElementById('checkout-step-2').classList.contains('active')) {
+      showMessage('Complete o Endereço', 'Por favor, preencha os dados de endereço e avance para pagamento.');
       return;
     }
     
     
-    document.getElementById('checkout-modal').style.display = 'none';
+    const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
     
-    showMessage('Pedido Realizado', 'Seu pedido foi processado com sucesso! Em breve você receberá um e-mail com os detalhes da sua compra.');
+    if (paymentMethod === 'credit-card') {
+      const cardNumber = document.getElementById('card-number').value;
+      const cardName = document.getElementById('card-name').value;
+      const cardExpiry = document.getElementById('card-expiry').value;
+      const cardCvv = document.getElementById('card-cvv').value;
+      
+      if (!cardNumber || !cardName || !cardExpiry || !cardCvv) {
+        showMessage('Dados do Cartão Incompletos', 'Por favor, preencha todos os dados do seu cartão de crédito.');
+        return;
+      }
+    }
     
     
-    cartItems.length = 0;
-    appliedCoupon = null;
-    updateCartCount();
+    document.getElementById('checkout-sections').style.display = 'none';
+    document.getElementById('checkout-processing').style.display = 'block';
+    
+    
+    try {
+      await updateProgressBar(10, 'Iniciando processamento do pedido...');
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      await updateProgressBar(30, 'Verificando estoque...');
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      await updateProgressBar(50, 'Processando pagamento...');
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      await updateProgressBar(70, 'Validando transação...');
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      await updateProgressBar(90, 'Finalizando pedido...');
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      await updateProgressBar(100, 'Pedido concluído com sucesso!');
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      
+      document.getElementById('checkout-modal').style.display = 'none';
+      
+      
+      const orderNumber = Math.floor(10000 + Math.random() * 90000);
+      
+      showMessage(
+        'Pedido Realizado', 
+        `Seu pedido #${orderNumber} foi processado com sucesso! Em breve você receberá um e-mail com os detalhes da sua compra.`
+      );
+      
+      
+      cartItems.length = 0;
+      appliedCoupon = null;
+      updateCartCount();
+      
+      
+      document.getElementById('checkout-sections').style.display = 'grid';
+      document.getElementById('checkout-processing').style.display = 'none';
+      await updateProgressBar(0, '');
+      
+    } catch (error) {
+      
+      showMessage('Erro no Processamento', 'Ocorreu um erro ao processar seu pedido. Por favor, tente novamente.');
+      
+      
+      document.getElementById('checkout-sections').style.display = 'grid';
+      document.getElementById('checkout-processing').style.display = 'none';
+      await updateProgressBar(0, '');
+    }
   }
   
   
@@ -770,4 +975,31 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('message-title').textContent = title;
     document.getElementById('message-text').textContent = text;
     modal.style.display = 'flex';
+  }
+  
+  
+  function generateRandomPixCode() {
+    const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let pixCode = '';
+    
+    
+    for (let block = 0; block < 8; block++) {
+      for (let i = 0; i < 4; i++) {
+        pixCode += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      if (block < 7) pixCode += ' ';
+    }
+    
+    return pixCode;
+  }
+  
+  
+  function updateProgressBar(value, message) {
+    const progressBar = document.getElementById('payment-progress-bar');
+    const progressMessage = document.getElementById('payment-progress-message');
+    
+    progressBar.style.width = `${value}%`;
+    progressMessage.textContent = message;
+    
+    return new Promise(resolve => setTimeout(resolve, 500));
   }
