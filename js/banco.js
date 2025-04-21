@@ -153,13 +153,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('insurance-panel').style.display = 'block';
         break;
         
-      case 'payment':
-        showMessage('Funcionalidade Simulada', 'A funcionalidade de pagamentos está disponível apenas para demonstração e não foi implementada completamente nesta versão.');
-        break;
-        
-      case 'investments':
-        showMessage('Funcionalidade Simulada', 'A funcionalidade de investimentos está disponível apenas para demonstração e não foi implementada completamente nesta versão.');
-        break;
     }
   }
   
