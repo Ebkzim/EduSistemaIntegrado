@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Online - Sistema Integrado Edu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/biblioteca.css">
+  
+</head>
+<body>
+ 
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="navbar-brand">Sistema <span>Edu</span></a>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+    <div class="container">
+      <div class="hero">
+        <h1>Biblioteca Online</h1>
+        <p>Acesse, busque e reserve livros da nossa coleção digital</p>
+        <div class="user-greeting">
+          Bem-vindo(a), <span class="user-display">Visitante</span>!
+        </div>
+      </div>
+
+      
+      <div class="search-container">
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="Buscar por título, autor ou gênero...">
+          <button id="search-button" class="btn btn-primary">
+            <i class="fas fa-search"></i> Buscar
+          </button>
+        </div>
+        <div class="filter-options">
+          <div class="filter-group">
+            <label for="filter-availability">Disponibilidade:</label>
+            <select id="filter-availability">
+              <option value="all">Todos</option>
+              <option value="available">Disponíveis</option>
+              <option value="borrowed">Emprestados</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filter-genre">Gênero:</label>
+            <select id="filter-genre">
+              <option value="all">Todos</option>
+              <option value="fiction">Ficção</option>
+              <option value="non-fiction">Não-Ficção</option>
+              <option value="fantasy">Fantasia</option>
+              <option value="science">Ciência</option>
+              <option value="biography">Biografia</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="books-container">
+        <h2 class="section-title">Livros Disponíveis</h2>
+        <div id="books-list" class="books-list">
+          
+        </div>
+      </div>
+
+      
+      <div id="borrowed-books-section" class="borrowed-books-section" style="display: none;">
+        <h2 class="section-title">Meus Empréstimos</h2>
+        <div id="borrowed-books-list" class="borrowed-books-list">
+          
+        </div>
+      </div>
+
+      
+      <div id="book-modal" class="modal">
+        <div class="modal-content book-modal-content">
+          <span class="close-button">&times;</span>
+          <div class="book-modal-details">
+            <h2 id="modal-book-title">Título do Livro</h2>
+            <div class="book-details-grid">
+              <div class="book-cover">
+                <img id="modal-book-cover" src="" alt="Capa do livro">
+                <div id="modal-book-status" class="book-status available">Disponível</div>
+              </div>
+              <div class="book-info">
+                <p><strong>Autor:</strong> <span id="modal-book-author">Nome do Autor</span></p>
+                <p><strong>ISBN:</strong> <span id="modal-book-isbn">1234567890</span></p>
+                <p><strong>Gênero:</strong> <span id="modal-book-genre">Gênero</span></p>
+                <p><strong>Ano:</strong> <span id="modal-book-year">2023</span></p>
+                <p><strong>Páginas:</strong> <span id="modal-book-pages">300</span></p>
+                <div class="book-description">
+                  <p><strong>Sinopse:</strong></p>
+                  <p id="modal-book-description">Descrição do livro...</p>
+                </div>
+              </div>
+            </div>
+            <div class="book-actions">
+              <button id="borrow-button" class="btn btn-primary">Emprestar</button>
+              <button id="reserve-button" class="btn btn-secondary" style="display: none;">Reservar</button>
+              <button id="return-button" class="btn btn-secondary" style="display: none;">Devolver</button>
+              <button id="renew-button" class="btn btn-secondary" style="display: none;">Renovar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div id="message-modal" class="modal">
+        <div class="modal-content message-modal-content">
+          <span class="close-message-button">&times;</span>
+          <h2 id="message-title">Título da Mensagem</h2>
+          <p id="message-text">Texto da mensagem aqui.</p>
+          <button id="message-button" class="btn btn-primary">OK</button>
+        </div>
+      </div>
+
+      
+      <div id="login-modal" class="modal">
+        <div class="modal-content login-modal-content">
+          <span class="close-login-button">&times;</span>
+          <h2>Faça login para continuar</h2>
+          <form id="modal-login-form">
+            <div class="input-group">
+              <label for="modal-username" class="input-label">Nome de Usuário</label>
+              <input type="text" id="modal-username" class="input-field" placeholder="Digite seu nome de usuário" required>
+            </div>
+            <div class="input-group">
+              <label for="modal-password" class="input-label">Senha</label>
+              <input type="password" id="modal-password" class="input-field" placeholder="Digite sua senha" required>
+            </div>
+            <button type="button" id="modal-login-button" class="btn btn-primary">Entrar</button>
+          </form>
+          <p class="login-note">Use qualquer nome e senha.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p class="credito">&copy; 2025 Sistema Integrado Eduardo Henrique.</p>
+        <p>RA: 125111398154</p>
+        <p>Portfólio: <a href="https://ebkzimm.netlify.app/" target="_blank" class="portfolio">ebkzim</a></p>
+        
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/biblioteca.js"></script>
+</body>
+</html>

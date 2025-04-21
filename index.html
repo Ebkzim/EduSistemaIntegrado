@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="icon.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Integrado Edu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="navbar-brand">Sistema <span>Edu</span></a>
+        <ul class="nav-menu">
+         
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  
+  <main>
+    <div class="container">
+      
+      <section class="page" data-page="home">
+        <div class="hero">
+          <h1>Bem-vindo ao Sistema Integrado Edu</h1>
+          <p>Escolha um dos nossos sistemas abaixo para começar</p>
+          <div class="button-group">
+            <button id="info-button" class="btn btn-secondary">Leia-me / Saiba Mais</button>
+            <a href="#" class="btn btn-green" data-nav="use-cases">Casos de Uso</a>
+          </div>
+        </div>
+        
+        <div id="info-box" class="info-box" style="display: none;">
+          <h2>Sobre este Sistema Demonstrativo</h2>
+          <p>O Sistema Integrado Edu foi desenvolvido apenas para fins demonstrativos e visualização 
+            de interfaces. Todos os sistemas são interativos, mas <span class="highlight">não implementam 
+            funcionalidades reais</span> de backend ou integrações externas.</p>
+          <p>Você pode navegar livremente entre a Biblioteca, E-commerce e Banco Digital, interagir com os 
+            formulários e botões, mas todas as operações são simuladas para demonstrar os casos de uso na prática.</p>
+          <p>Os dados apresentados são fictícios e as transações não são reais.</p>
+        </div>
+        
+        <div class="services">
+          
+          <div class="card">
+            <div class="card-header card-header-library">
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Biblioteca Online</h3>
+              <p class="card-text">Acesse nossa biblioteca digital, busque e reserve livros de forma rápida e simples.</p>
+              <div class="card-action">
+                <a href="biblioteca.html" class="btn btn-primary">Acessar <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="card">
+            <div class="card-header card-header-ecommerce">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">E-commerce</h3>
+              <p class="card-text">Encontre as melhores peças para seu computador com preços competitivos.</p>
+              <div class="card-action">
+                <a href="ecommerce.html" class="btn btn-primary">Acessar <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="card">
+            <div class="card-header card-header-banking">
+              <i class="fas fa-university"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Banco Digital</h3>
+              <p class="card-text">Gerencie suas finanças, realize transferências e solicite serviços bancários.</p>
+              <div class="card-action">
+                <a href="banco.html" class="btn btn-primary">Acessar <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="page use-cases" data-page="use-cases">
+        <div class="hero">
+          <h1>Casos de Uso - Sistema Integrado Edu</h1>
+          <p>Documentação detalhada dos casos de uso para cada sistema da plataforma</p>
+          <a href="#" class="btn btn-secondary" data-nav="home">Voltar para Página Inicial</a>
+        </div>
+        
+        
+        <div class="use-case-card">
+          <h2 class="use-case-title" style="color: #8B5CF6;">
+            <i class="fas fa-book"></i>
+            Sistema de Biblioteca Online
+          </h2>
+          
+          <h3 class="section-title">Atores</h3>
+          <ul class="list">
+            <li>Visitante</li>
+            <li>Usuário (cadastrado)</li>
+            <li>Sistema da Biblioteca</li>
+          </ul>
+          
+          <h3 class="section-title error">Falhas Possíveis</h3>
+          <ul class="list error">
+            <li>Visitante tenta emprestar sem cadastro</li>
+            <li>Tentativa de reservar livro disponível (reserva não permitida)</li>
+            <li>Renovação negada por atraso ou fila de espera</li>
+          </ul>
+          
+          <h3 class="section-title success">Casos de Uso</h3>
+          <ul class="case-list">
+            <li class="case-item">
+              <p class="case-item-title">Buscar Livro:</p>
+              <p>Visitante acessa, insere critérios e visualiza resultados.</p>
+            </li>
+            <li class="case-item">
+              <p class="case-item-title">Realizar Empréstimo:</p>
+              <p>Usuário se autentica, escolhe livro e realiza empréstimo se disponível.</p>
+            </li>
+            <li class="case-item">
+              <p class="case-item-title">Reservar Livro:</p>
+              <p>Sistema permite reserva apenas se o livro estiver emprestado.</p>
+            </li>
+            <li class="case-item">
+              <p class="case-item-title">Renovar Empréstimo:</p>
+              <p>Sistema renova se não houver atraso ou fila de espera.</p>
+            </li>
+          </ul>
+          
+          <div class="diagram-container">
+            <img src="img/biblio.png" alt="Diagrama de Classes da Biblioteca" class="diagram-image">
+            <div class="zoom-hint">Clique para ampliar</div>
+          </div>
+        </div>
+        
+        
+        <div class="use-case-card">
+          <h2 class="use-case-title" style="color: #3B82F6;">
+            <i class="fas fa-university"></i>
+            Sistema Bancário
+          </h2>
+          
+          <h3 class="section-title">Atores</h3>
+          <ul class="list">
+            <li>Usuário</li>
+            <li>Empresa</li>
+            <li>Sistema de Transferência</li>
+            <li>Sistema de Pagamento</li>
+            <li>Gerente</li>
+          </ul>
+          
+          <h3 class="section-title error">Falhas Possíveis</h3>
+          <ul class="list error">
+            <li>Transferência falha por saldo ou dados incorretos</li>
+            <li>Pagamento de salário com erro</li>
+            <li>Conta bloqueada indevidamente</li>
+            <li>Empréstimo negado por restrições</li>
+          </ul>
+          
+          <h3 class="section-title success">Casos de Uso</h3>
+          <ul class="case-list">
+            <li class="case-item">
+              <p class="case-item-title">Entrar na Conta:</p>
+              <p>Usuário informa dados e acessa se autenticado.</p>
+            </li>
+            <li class="case-item">
+              <p class="case-item-title">Transferência:</p>
+              <p>Usuário envia valor, sistema valida e transfere (com gerente, se necessário).</p>
+            </li>
+            <li class="case-item">
+              <p class="case-item-title">Salário:</p>
+              <p>Empresa agenda, sistema transfere e usuário recebe.</p>
+            </li>
+            <li class="case-item">
+              <p class="case-item-title">Empréstimo:</p>
+              <p>Usuário solicita, sistema avalia e aprova ou recusa.</p>
+            </li>
+            <li class="case-item">
+              <p class="case-item-title">Contratar Seguro:</p>
+              <p>Usuário escolhe seguro, aceita termos e sistema registra.</p>
+            </li>
+          </ul>
+          
+          <div class="diagram-container">
+            <img src="img/bancco.png" alt="Diagrama de Classes do Sistema Bancário" class="diagram-image">
+            <div class="zoom-hint">Clique para ampliar</div>
+          </div>
+        </div>
+        
+        
+        <div class="use-case-card">
+          <h2 class="use-case-title" style="color: #F59E0B;">
+            <i class="fas fa-shopping-cart"></i>
+            Sistema de E-commerce
+          </h2>
+          
+          <h3 class="section-title">Atores</h3>
+          <ul class="list">
+            <li>Cliente</li>
+            <li>Sistema de Pagamento</li>
+            <li>Sistema de Entrega</li>
+            <li>Sistema de Cupons</li>
+          </ul>
+          
+          <h3 class="section-title error">Falhas Possíveis</h3>
+          <ul class="list error">
+            <li>Cupom inválido</li>
+            <li>Pagamento recusado</li>
+            <li>Produto fora de estoque</li>
+            <li>Erro no frete</li>
+          </ul>
+          
+          <h3 class="section-title success">Casos de Uso</h3>
+          <ul class="case-list">
+            <li class="case-item">
+              <p class="case-item-title">Buscar Produto:</p>
+              <p>Cliente insere critérios e recebe resultados.</p>
+            </li>
+            <li class="case-item">
+              <p class="case-item-title">Adicionar ao Carrinho:</p>
+              <p>Produto selecionado e adicionado.</p>
+            </li>
+            <li class="case-item">
+              <p class="case-item-title">Finalizar Compra:</p>
+              <p>Cliente informa entrega e pagamento, aplica cupom (opcional) e finaliza pedido.</p>
+            </li>
+          </ul>
+          
+          <div class="diagram-container">
+            <img src="img/ecomerce.png" alt="Diagrama de Classes do E-commerce" class="diagram-image">
+            <div class="zoom-hint">Clique para ampliar</div>
+          </div>
+        </div>
+        
+        <div class="button-group">
+          <a href="#" class="btn btn-secondary" data-nav="home">Voltar para Página Inicial</a>
+        </div>
+      </section>
+
+      
+      <section class="page" data-page="library">
+        <div class="hero">
+          <h1>Biblioteca Online</h1>
+          <p>Acesse e reserve livros digitalmente</p>
+          <a href="#" class="btn btn-secondary" data-nav="home">Voltar para Página Inicial</a>
+        </div>
+        
+        <div class="info-box">
+          <h2>Sistema de Demonstração</h2>
+          <p>Esta é uma versão simplificada do sistema de biblioteca. Na versão React completa, você pode:</p>
+          <ul class="list">
+            <li>Buscar entre 12 livros diferentes</li>
+            <li>Realizar empréstimos e devoluções simuladas</li>
+            <li>Reservar livros que estão emprestados</li>
+            <li>Ver detalhes dos livros</li>
+          </ul>
+        </div>
+      </section>
+
+      
+      <section class="page" data-page="ecommerce">
+        <div class="hero">
+          <h1>E-commerce</h1>
+          <p>Compre as melhores peças para seu computador</p>
+          <a href="#" class="btn btn-secondary" data-nav="home">Voltar para Página Inicial</a>
+        </div>
+        
+        <div class="info-box">
+          <h2>Sistema de Demonstração</h2>
+          <p>Esta é uma versão simplificada do sistema de e-commerce. Na versão React completa, você pode:</p>
+          <ul class="list">
+            <li>Navegar por 15 produtos diferentes</li>
+            <li>Adicionar produtos ao carrinho</li>
+            <li>Aplicar cupons de desconto</li>
+            <li>Simular o processo de checkout</li>
+          </ul>
+        </div>
+      </section>
+
+      
+      <section class="page" data-page="banking">
+        <div class="hero">
+          <h1>Banco Digital</h1>
+          <p>Gerencie suas finanças com facilidade</p>
+          <a href="#" class="btn btn-secondary" data-nav="home">Voltar para Página Inicial</a>
+        </div>
+        
+        <div class="info-box">
+          <h2>Sistema de Demonstração</h2>
+          <p>Esta é uma versão simplificada do sistema bancário. Na versão React completa, você pode:</p>
+          <ul class="list">
+            <li>Simular transferências bancárias</li>
+            <li>Solicitar empréstimos com cálculo de parcelas</li>
+            <li>Contratar seguros personalizados</li>
+            <li>Visualizar histórico de transações</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  
+  <div id="image-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <img id="modal-image" class="modal-image">
+      <div id="modal-caption" class="modal-caption"></div>
+    </div>
+  </div>
+
+  
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p class="credito">&copy; 2025 Sistema Integrado Eduardo Henrique.</p>
+        <p>RA: 125111398154</p>
+        <p>Portfólio: <a href="https://ebkzimm.netlify.app/" target="_blank" class="portfolio">ebkzim</a></p>
+        
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

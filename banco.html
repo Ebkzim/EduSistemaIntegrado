@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco Digital - Sistema Integrado Edu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/banco.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="navbar-brand">Sistema <span>Edu</span></a>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+   
+  <main>
+    <div class="container">
+       
+      <section id="login-section" class="login-section">
+        <div class="login-container">
+          <div class="login-header">
+            <i class="fas fa-university"></i>
+            <h1>Banco Digital Edu</h1>
+            <p>Acesse sua conta para gerenciar suas finanças</p>
+          </div>
+          <form id="login-form" class="login-form">
+            <div class="form-group">
+              <label for="username">Nome de Usuário</label>
+              <div class="input-icon">
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" placeholder="Digite seu nome de usuário" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password">Senha</label>
+              <div class="input-icon">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Digite sua senha" required>
+              </div>
+            </div>
+            <div class="form-options">
+              <div class="remember-me">
+                <input type="checkbox" id="remember">
+                <label for="remember">Lembrar-me</label>
+              </div>
+              <a href="#" class="forgot-password">Esqueceu a senha?</a>
+            </div>
+            <button type="button" id="login-button" class="btn-login">Entrar</button>
+          </form>
+          <div class="login-footer">
+            <p>Este é um sistema de demonstração. Use qualquer nome e senha.</p>
+          </div>
+        </div>
+      </section>
+
+       
+      <section id="dashboard-section" class="dashboard-section" style="display: none;">
+         
+        <div class="dashboard-header">
+          <div class="user-welcome">
+            <h1>Olá, <span class="user-display">Usuário</span>!</h1>
+            <p class="date-display">22 de abril de 2025</p>
+          </div>
+          <div class="account-info">
+            <div class="account-number">
+              <p>Conta Corrente</p>
+              <h3>•••• 4567</h3>
+            </div>
+            <div class="account-balance">
+              <p>Saldo Disponível</p>
+              <h2 id="balance-display">R$ 5.432,10</h2>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="quick-menu">
+          <div class="quick-action" data-action="transfer">
+            <div class="action-icon"><i class="fas fa-exchange-alt"></i></div>
+            <span>Transferência</span>
+          </div>
+          <div class="quick-action" data-action="payment">
+            <div class="action-icon"><i class="fas fa-barcode"></i></div>
+            <span>Pagamentos</span>
+          </div>
+          <div class="quick-action" data-action="loan">
+            <div class="action-icon"><i class="fas fa-hand-holding-usd"></i></div>
+            <span>Empréstimo</span>
+          </div>
+          <div class="quick-action" data-action="insurance">
+            <div class="action-icon"><i class="fas fa-shield-alt"></i></div>
+            <span>Seguros</span>
+          </div>
+          <div class="quick-action" data-action="investments">
+            <div class="action-icon"><i class="fas fa-chart-line"></i></div>
+            <span>Investimentos</span>
+          </div>
+        </div>
+        
+        
+        <div class="dashboard-content">
+          
+          <div id="transfer-panel" class="dashboard-panel">
+            <div class="panel-header">
+              <h2>Transferência Rápida</h2>
+            </div>
+            <div class="panel-content">
+              <form id="transfer-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="transfer-type">Tipo de Transferência</label>
+                    <select id="transfer-type" required>
+                      <option value="pix">PIX</option>
+                      <option value="ted">TED</option>
+                      <option value="doc">DOC</option>
+                      <option value="internal">Entre Contas</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="recipient">Destinatário</label>
+                    <input type="text" id="recipient" placeholder="CPF/CNPJ ou Chave PIX" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="amount">Valor</label>
+                    <input type="text" id="amount" placeholder="R$ 0,00" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="description">Descrição (opcional)</label>
+                  <input type="text" id="description" placeholder="Para que é esta transferência?">
+                </div>
+                
+                <div id="transfer-summary" class="transfer-summary" style="display: none;">
+                  <h3>Resumo da Transferência</h3>
+                  <div class="summary-details">
+                    <p><span>Valor:</span> <span id="summary-amount"></span></p>
+                    <p><span>Para:</span> <span id="summary-recipient"></span></p>
+                    <p><span>Via:</span> <span id="summary-type"></span></p>
+                    <p id="summary-description-row" style="display: none;"><span>Descrição:</span> <span id="summary-description"></span></p>
+                  </div>
+                </div>
+                
+                <div class="form-actions">
+                  <button type="button" id="transfer-button" class="btn btn-primary">Transferir</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+          
+          <div class="dashboard-panel">
+            <div class="panel-header">
+              <h2>Transações Recentes</h2>
+            </div>
+            <div class="panel-content">
+              <div class="transactions-list" id="transactions-list">
+                
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="panels-grid">
+            
+            <div id="loan-panel" class="dashboard-panel" style="display: none;">
+              <div class="panel-header">
+                <h2>Simulação de Empréstimo</h2>
+              </div>
+              <div class="panel-content">
+                <form id="loan-form">
+                  <div class="form-group">
+                    <label for="loan-amount">Valor do Empréstimo</label>
+                    <input type="text" id="loan-amount" placeholder="R$ 0,00" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="loan-term">Prazo (meses)</label>
+                    <input type="range" id="loan-term" min="6" max="60" value="24" class="slider">
+                    <div class="slider-value"><span id="term-value">24</span> meses</div>
+                  </div>
+                  
+                  <div id="loan-simulation" class="loan-simulation" style="display: none;">
+                    <h3>Simulação do Empréstimo</h3>
+                    <div class="simulation-details">
+                      <div class="simulation-item">
+                        <span class="simulation-label">Valor solicitado:</span>
+                        <span id="simulation-principal" class="simulation-value">R$ 5.000,00</span>
+                      </div>
+                      <div class="simulation-item">
+                        <span class="simulation-label">Taxa de juros:</span>
+                        <span id="simulation-rate" class="simulation-value">1,99% a.m.</span>
+                      </div>
+                      <div class="simulation-item">
+                        <span class="simulation-label">Prazo:</span>
+                        <span id="simulation-term" class="simulation-value">24 meses</span>
+                      </div>
+                      <div class="simulation-item">
+                        <span class="simulation-label">Valor da parcela:</span>
+                        <span id="simulation-installment" class="simulation-value">R$ 254,67</span>
+                      </div>
+                      <div class="simulation-item">
+                        <span class="simulation-label">Total a pagar:</span>
+                        <span id="simulation-total" class="simulation-value">R$ 6.112,08</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-actions">
+                    <button type="button" id="simulate-button" class="btn btn-secondary">Simular</button>
+                    <button type="button" id="loan-button" class="btn btn-primary" style="display: none;">Contratar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            
+        
+            <div id="insurance-panel" class="dashboard-panel" style="display: none;">
+              <div class="panel-header">
+                <h2>Seguros</h2>
+              </div>
+              <div class="panel-content">
+                <div class="insurance-list" id="insurance-list">
+                  
+                </div>
+                
+                <div id="insurance-details" class="insurance-details" style="display: none;">
+                  <h3 id="selected-insurance-title">Detalhes do Seguro</h3>
+                  <div class="insurance-form">
+                    <div class="form-group">
+                      <label for="coverage">Cobertura</label>
+                      <select id="coverage">
+                        <option value="basica">Cobertura Básica</option>
+                        <option value="intermediaria">Cobertura Intermediária</option>
+                        <option value="completa">Cobertura Completa</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="payment-frequency">Frequência de Pagamento</label>
+                      <select id="payment-frequency">
+                        <option value="mensal">Mensal</option>
+                        <option value="trimestral">Trimestral (5% desconto)</option>
+                        <option value="anual">Anual (15% desconto)</option>
+                      </select>
+                    </div>
+                    <div class="form-group" id="franchise-group" style="display: none;">
+                      <label for="franchise">Franquia</label>
+                      <select id="franchise">
+                        <option value="reduzida">Franquia Reduzida</option>
+                        <option value="normal">Franquia Normal</option>
+                        <option value="zero">Sem Franquia (Valor maior)</option>
+                      </select>
+                    </div>
+                    
+                    <div class="insurance-price">
+                      <p>Valor estimado: <span id="insurance-price">R$ 89,90/mês</span></p>
+                    </div>
+                    
+                    <div class="form-actions">
+                      <button type="button" id="insurance-button" class="btn btn-primary">Contratar</button>
+                      <button type="button" id="back-button" class="btn btn-secondary">Voltar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <div id="message-modal" class="modal">
+        <div class="modal-content message-modal-content">
+          <span class="close-message-button">&times;</span>
+          <h2 id="message-title">Título da Mensagem</h2>
+          <p id="message-text">Texto da mensagem aqui.</p>
+          <button id="message-button" class="btn btn-primary">OK</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p class="credito">&copy; 2025 Sistema Integrado Eduardo Henrique.</p>
+        <p>RA: 125111398154</p>
+        <p>Portfólio: <a href="https://ebkzimm.netlify.app/" target="_blank" class="portfolio">ebkzim</a></p>
+        
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/banco.js"></script>
+</body>
+</html>
