@@ -59,6 +59,7 @@
   
   .nav-menu {
     display: flex;
+    
     list-style: none;
   }
   
@@ -66,7 +67,9 @@
     margin-left: 20px;
   }
   
+  
   .nav-link {
+  
     color: #333;
     text-decoration: none;
     font-weight: 500;
